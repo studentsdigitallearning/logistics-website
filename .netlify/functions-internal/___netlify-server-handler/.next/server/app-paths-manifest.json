@@ -1,9 +1,0 @@
-{
-  "/_global-error/page": "app/_global-error/page.js",
-  "/_not-found/page": "app/_not-found/page.js",
-  "/admin/developer-info/page": "app/admin/developer-info/page.js",
-  "/api/admin/developer-info/route": "app/api/admin/developer-info/route.js",
-  "/api/developer-info/route": "app/api/developer-info/route.js",
-  "/api/route": "app/api/route.js",
-  "/page": "app/page.js"
-}
