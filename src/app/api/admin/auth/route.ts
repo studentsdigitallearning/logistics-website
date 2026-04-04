@@ -1,5 +1,6 @@
 import { NextResponse } from 'next/server'
 import { supabaseAdmin } from '@/lib/supabase'
+import bcrypt from 'bcryptjs'
 
 export async function POST(request: Request) {
   try {
@@ -9,18 +10,25 @@ export async function POST(request: Request) {
       return NextResponse.json({ error: 'Email and password are required' }, { status: 400 })
     }
 
-    const { data, error } = await supabaseAdmin
+    const { data: user, error } = await supabaseAdmin
       .from('AdminUser')
-      .select('id, email, name, role')
+      .select('id, email, name, role, password')
       .eq('email', email)
-      .eq('password', password)
       .single()
 
-    if (error || !data) {
+    if (error || !user) {
       return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 })
     }
 
-    return NextResponse.json(data)
+    // Compare bcrypt hash with provided password
+    const isValid = await bcrypt.compare(password, user.password)
+    if (!isValid) {
+      return NextResponse.json({ error: 'Invalid email or password' }, { status: 401 })
+    }
+
+    // Return user data without password
+    const { password: _, ...userData } = user
+    return NextResponse.json(userData)
   } catch (error: any) {
     return NextResponse.json({ error: error.message }, { status: 500 })
   }
