@@ -6,7 +6,7 @@ export async function GET() {
     const { data, error } = await supabaseAdmin
       .from('Testimonial')
       .select('*')
-      .order('created_at', { ascending: false })
+      .order('createdAt', { ascending: false })
 
     if (error) throw error
     return NextResponse.json(data)
@@ -25,7 +25,7 @@ export async function POST(request: Request) {
         role: body.role || null,
         review: body.review,
         rating: body.rating || 5,
-        status: body.status ?? true,
+        status: body.status ?? 'active',
       }])
       .select()
 

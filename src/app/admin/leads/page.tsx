@@ -125,7 +125,7 @@ export default function AdminLeadsPage() {
                         {lead.message || '-'}
                       </TableCell>
                       <TableCell className="text-sm text-gray-500">
-                        {new Date(lead.created_at).toLocaleDateString()}
+                        {new Date(lead.createdAt).toLocaleDateString()}
                       </TableCell>
                     </TableRow>
                   ))}

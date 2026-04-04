@@ -6,7 +6,7 @@ export async function GET(request: Request) {
     const { searchParams } = new URL(request.url)
     const status = searchParams.get('status')
 
-    let query = supabaseAdmin.from('Lead').select('*').order('created_at', { ascending: false })
+    let query = supabaseAdmin.from('Lead').select('*').order('createdAt', { ascending: false })
 
     if (status && status !== 'all') {
       query = query.eq('status', status)

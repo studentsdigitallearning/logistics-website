@@ -25,7 +25,7 @@ export async function POST(request: Request) {
         url: body.url,
         icon: body.icon || null,
         position: body.position || 0,
-        status: body.status ?? true,
+        status: body.status ?? 'active',
       }])
       .select()
 

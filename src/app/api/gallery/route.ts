@@ -7,7 +7,7 @@ export async function GET() {
       .from('Gallery')
       .select('*')
       .eq('status', 'active')
-      .order('created_at', { ascending: false })
+      .order('createdAt', { ascending: false })
 
     if (error) throw error
     return NextResponse.json(data)

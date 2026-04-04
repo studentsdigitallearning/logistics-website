@@ -220,7 +220,7 @@ export default function AdminTrackingPage() {
                       </TableCell>
                       <TableCell className="text-sm">{item.currentLocation || '-'}</TableCell>
                       <TableCell className="text-sm text-gray-500">
-                        {new Date(item.created_at).toLocaleDateString()}
+                        {new Date(item.createdAt).toLocaleDateString()}
                       </TableCell>
                       <TableCell className="text-right">
                         <div className="flex justify-end gap-2">

@@ -43,9 +43,9 @@ export interface Service {
   process: any[] | null
   faq: any[] | null
   showImage: boolean | null
-  status: boolean | null
-  created_at: string
-  updated_at: string
+  status: string | null
+  createdAt: string
+  updatedAt: string
 }
 
 export interface SocialMedia {
@@ -54,9 +54,9 @@ export interface SocialMedia {
   url: string
   icon: string | null
   position: number | null
-  status: boolean | null
-  created_at: string
-  updated_at: string
+  status: string | null
+  createdAt: string
+  updatedAt: string
 }
 
 export interface Lead {
@@ -70,8 +70,8 @@ export interface Lead {
   service: string | null
   message: string | null
   status: string | null
-  created_at: string
-  updated_at: string
+  createdAt: string
+  updatedAt: string
 }
 
 export interface Gallery {
@@ -79,9 +79,9 @@ export interface Gallery {
   title: string | null
   image: string
   showHome: boolean | null
-  status: boolean | null
-  created_at: string
-  updated_at: string
+  status: string | null
+  createdAt: string
+  updatedAt: string
 }
 
 export interface FooterLink {
@@ -90,9 +90,9 @@ export interface FooterLink {
   href: string
   section: string | null
   position: number | null
-  status: boolean | null
-  created_at: string
-  updated_at: string
+  status: string | null
+  createdAt: string
+  updatedAt: string
 }
 
 export interface Tracking {
@@ -105,8 +105,8 @@ export interface Tracking {
   dispatchDate: string | null
   deliveryDate: string | null
   currentLocation: string | null
-  created_at: string
-  updated_at: string
+  createdAt: string
+  updatedAt: string
 }
 
 export interface Testimonial {
@@ -115,9 +115,9 @@ export interface Testimonial {
   role: string | null
   review: string
   rating: number | null
-  status: boolean | null
-  created_at: string
-  updated_at: string
+  status: string | null
+  createdAt: string
+  updatedAt: string
 }
 
 export interface AdminUser {
@@ -126,8 +126,8 @@ export interface AdminUser {
   password: string
   name: string | null
   role: string
-  created_at: string
-  updated_at: string
+  createdAt: string
+  updatedAt: string
 }
 
 export interface Setting {
@@ -140,9 +140,9 @@ export interface CustomPage {
   title: string
   slug: string
   content: string | null
-  status: boolean | null
-  created_at: string
-  updated_at: string
+  status: string | null
+  createdAt: string
+  updatedAt: string
 }
 
 // Fields that admin role can edit (contact-related fields)

@@ -25,7 +25,7 @@ export async function POST(request: Request) {
         href: body.href,
         section: body.section || null,
         position: body.position || 0,
-        status: body.status ?? true,
+        status: body.status ?? 'active',
       }])
       .select()
 

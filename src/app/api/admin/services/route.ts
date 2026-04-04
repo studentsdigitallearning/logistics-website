@@ -6,7 +6,7 @@ export async function GET() {
     const { data, error } = await supabaseAdmin
       .from('Service')
       .select('*')
-      .order('created_at', { ascending: false })
+      .order('createdAt', { ascending: false })
 
     if (error) throw error
     return NextResponse.json(data)
@@ -31,7 +31,7 @@ export async function POST(request: Request) {
         process: body.process || [],
         faq: body.faq || [],
         showImage: body.showImage ?? true,
-        status: body.status ?? true,
+        status: body.status ?? 'active',
       }])
       .select()
 

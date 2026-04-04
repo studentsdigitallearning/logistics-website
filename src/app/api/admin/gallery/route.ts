@@ -6,7 +6,7 @@ export async function GET() {
     const { data, error } = await supabaseAdmin
       .from('Gallery')
       .select('*')
-      .order('created_at', { ascending: false })
+      .order('createdAt', { ascending: false })
 
     if (error) throw error
     return NextResponse.json(data)
@@ -24,7 +24,7 @@ export async function POST(request: Request) {
         title: body.title || null,
         image: body.image,
         showHome: body.showHome ?? true,
-        status: body.status ?? true,
+        status: body.status ?? 'active',
       }])
       .select()
 

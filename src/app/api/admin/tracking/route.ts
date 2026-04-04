@@ -6,7 +6,7 @@ export async function GET() {
     const { data, error } = await supabaseAdmin
       .from('Tracking')
       .select('*')
-      .order('created_at', { ascending: false })
+      .order('createdAt', { ascending: false })
 
     if (error) throw error
     return NextResponse.json(data)
